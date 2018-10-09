@@ -27,4 +27,8 @@ describe SecretDiary do
   it 'raises an error when trying to lock a locked diary' do
     expect { subject.lock }.to raise_error 'Diary is already locked.'
   end
+
+  it 'raises an error when trying to get_entries from a locked diary' do
+    expect { subject.get_entries }.to raise_error 'Cannot get entries, diary is locked.'
+  end
 end
