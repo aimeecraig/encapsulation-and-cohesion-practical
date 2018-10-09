@@ -17,4 +17,10 @@ describe SecretDiary do
   it 'returns true when calling get_entries' do
     expect(subject.get_entries).to eq true
   end
+
+  it 'raises an error when trying to add_entry to locked diary' do
+    subject.unlock
+    subject.lock
+    expect { subject.add_entry }.to raise_error 'Unable to add entry, diary is locked'
+  end
 end
