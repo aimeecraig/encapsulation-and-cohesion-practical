@@ -20,8 +20,6 @@ describe SecretDiary do
   end
 
   it 'raises an error when trying to add_entry to locked diary' do
-    subject.unlock
-    subject.lock
     expect { subject.add_entry }.to raise_error 'Unable to add entry, diary is locked'
   end
 
