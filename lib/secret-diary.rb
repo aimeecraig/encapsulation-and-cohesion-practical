@@ -1,4 +1,4 @@
-class DiaryLock
+class Diary
   attr_accessor :locked
 
   def initialize
@@ -15,14 +15,14 @@ class DiaryLock
   end
 end
 
-class DiaryEntries
+class DiaryEntries < Diary
   def add_entry
     raise 'Unable to add entry, diary is locked' if @locked == true
     true
   end
 end
 
-class DiaryDisplay
+class DiaryDisplay < Diary
   def get_entries
     raise 'Cannot get entries, diary is locked.' if @locked == true
     true

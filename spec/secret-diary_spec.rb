@@ -1,6 +1,6 @@
 require 'secret-diary'
 
-describe DiaryLock do
+describe Diary do
   it 'returns false when calling unlock' do
     expect(subject.unlock).to eq false
   end
