@@ -15,6 +15,7 @@ describe SecretDiary do
   end
 
   it 'returns true when calling get_entries' do
+    subject.unlock
     expect(subject.get_entries).to eq true
   end
 
