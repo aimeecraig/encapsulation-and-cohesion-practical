@@ -6,6 +6,7 @@ class SecretDiary
   end
 
   def lock
+    raise 'Diary is already locked.' if @locked == true
     @locked = true
   end
 
